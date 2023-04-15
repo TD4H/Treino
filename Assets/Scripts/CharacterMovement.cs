@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    [SerializeField] private CharacterController2D controller;
+    [SerializeField] private float moveSpeed;
     private float move;
     private bool jump;
-    [SerializeField] private CharacterController2D controller;
-    [SerializeField] private float moveSpeeed;
-    // Update is called once per frame
 
     private void Update()
     {
@@ -16,26 +15,22 @@ public class CharacterMovement : MonoBehaviour
         HandlePulo();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        controller.Move(move, false, jump);
+        controller.Move(move * Time.fixedDeltaTime, false, jump);
+        jump = false;
     }
 
-    void HandleMovimento()
+    private void HandleMovimento()
     {
-        move = Input.GetAxis("Horizontal") * moveSpeeed * Time.fixedDeltaTime;
+        move = Input.GetAxisRaw("Horizontal") * moveSpeed;
     }
-    void HandlePulo()
+
+    private void HandlePulo()
     {
         if (Input.GetKeyDown(KeyCode.Space) && controller.GetGrounded())
         {
-            Debug.Log("Supostamente pulando");
             jump = true;
-        }
-        else
-        {
-            Debug.Log("Supostamente não pulando");
-            jump = false;
         }
     }
 }
