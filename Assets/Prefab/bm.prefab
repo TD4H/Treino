@@ -287,8 +287,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3969605947076029348}
   m_Bounds:
-    m_Center: {x: -0.0016324818, y: -0.001145035, z: 0}
-    m_Extent: {x: 0.16676259, y: 0.2570451, z: 0}
+    m_Center: {x: -0.15374391, y: 0.009446621, z: 0}
+    m_Extent: {x: 0.21045019, y: 0.2718125, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7178172864289925930}
   animator: {fileID: 4482555882323480349}
-  moveSpeed: 80
+  moveSpeed: 30
 --- !u!95 &4482555882323480349
 Animator:
   serializedVersion: 4
@@ -1272,8 +1272,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1030698339392505774}
   m_Bounds:
-    m_Center: {x: -0.000032395124, y: -0.0025976002, z: 0}
-    m_Extent: {x: 0.16847757, y: 0.25931758, z: 0}
+    m_Center: {x: 0.10444309, y: 0.0058538616, z: 0}
+    m_Extent: {x: 0.22794835, y: 0.2644584, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
