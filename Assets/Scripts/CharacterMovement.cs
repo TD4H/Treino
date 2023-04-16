@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
+    [SerializeField] private Animator animator;
     [SerializeField] private float moveSpeed;
     private float move;
     private bool jump;
@@ -24,6 +25,11 @@ public class CharacterMovement : MonoBehaviour
     private void HandleMovimento()
     {
         move = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        
+        if (move == 0)
+            animator.SetBool("move", false);
+        else
+            animator.SetBool("move", true);
     }
 
     private void HandlePulo()
