@@ -10,6 +10,14 @@ public class CharacterMovement : MonoBehaviour
     private float move;
     private bool jump;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            animator.SetTrigger("onGround");
+        }
+    }
+
     private void Update()
     {
         HandleMovimento();
@@ -37,6 +45,7 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && controller.GetGrounded())
         {
             jump = true;
+            animator.SetTrigger("onJump");
         }
     }
 }
